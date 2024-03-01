@@ -1,0 +1,3 @@
+[2024-03-01 16:14:13,776] 230 django.request - WARNING -Not Found: /logout
+[2024-03-01 16:16:51,975] 230 django.request - WARNING -Not Found: /logout
+[2024-03-01 16:17:59,503] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py changed, reloading.

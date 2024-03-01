@@ -1,0 +1,2 @@
+[2024-02-18 17:24:47,459] 241 django.request - WARNING -Not Found: /updatedb
+[2024-02-18 17:29:36,547] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

@@ -1,0 +1,74 @@
+[2024-02-26 19:37:46,182] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 19:38:36,498] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:38:43,797] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:44,022] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:45,191] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:45,711] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:46,070] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:47,509] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:50,045] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:50,078] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:38:54,125] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:39:03,691] 224 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 89, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor m10-20020a170902f20a00b001dc486f0cb2sm3971868plc.208 - gsmtp')
+[2024-02-26 19:46:03,910] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:46:09,798] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:46:12,926] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:46:24,330] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:46:26,391] 224 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 19:46:31,220] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:31,740] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:33,325] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:33,677] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:36,837] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:36,908] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:39,907] 224 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:46:48,489] 224 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 89, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ei29-20020a056a0080dd00b006e507a98254sm2833529pfb.206 - gsmtp')
+[2024-02-26 19:47:08,159] 224 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js

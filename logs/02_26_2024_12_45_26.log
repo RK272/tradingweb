@@ -1,0 +1,17 @@
+[2024-02-26 12:45:27,443] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 12:45:42,188] 241 django.request - WARNING -Not Found: /registration
+[2024-02-26 12:47:58,052] 241 django.request - WARNING -Not Found: /authentication
+[2024-02-26 12:48:04,615] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 12:48:04,673] 241 django.request - WARNING -Not Found: /docs/5.3/dist/js/bootstrap.bundle.min.js
+[2024-02-26 12:48:33,631] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 12:49:38,253] 241 django.request - WARNING -Not Found: /registration
+[2024-02-26 12:49:55,658] 241 django.request - WARNING -Not Found: /login
+[2024-02-26 12:50:04,409] 241 django.request - WARNING -Not Found: /registration
+[2024-02-26 12:51:22,566] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 12:51:22,588] 241 django.request - WARNING -Not Found: /docs/5.3/dist/js/bootstrap.bundle.min.js
+[2024-02-26 12:51:26,915] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 12:52:20,763] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 12:52:20,788] 241 django.request - WARNING -Not Found: /docs/5.3/dist/js/bootstrap.bundle.min.js
+[2024-02-26 12:53:10,145] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 12:53:10,158] 241 django.request - WARNING -Not Found: /docs/5.3/dist/js/bootstrap.bundle.min.js
+[2024-02-26 12:55:18,604] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

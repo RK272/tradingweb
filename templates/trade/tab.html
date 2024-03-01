@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV Data Display</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    /* Define styles for the scrollable container */
+    .scrollable-table {
+        max-height: 400px; /* Adjust the height as needed */
+        overflow: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>CSV Data Display</h1>
+    <form method="post", action="http://127.0.0.1:8000/tab">
+      {% csrf_token %}
+        <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+
+
+
+          <div class="relative flex-grow w-full">
+        <label for="symbol" class="leading-7 text-sm text-gray-600">Symbol (e.g., NSE:RELIANCE-EQ)</label>
+        <input type="text" id="symbol" name="symbol" pattern="NSE:[A-Z0-9\-]+-EQ" title="Please enter a symbol in the format NSE:XXXX-EQ" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+    </div>
+    </form>
+</header>
+
+<div class="container">
+    <!-- Wrap the table inside a scrollable container -->
+    <div class="scrollable-table">
+        <table id="dataTable">
+            <!-- Table header will be inserted here -->
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Download button for raw CSV -->
+    <button id="downloadButton">Download Raw CSV</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 CSV Data Display. All rights reserved.</p>
+</footer>
+
+<script>
+    // Function to fetch and display CSV data
+    function displayCSVData(csvFilePath) {
+        fetch(csvFilePath)
+            .then(response => response.text())
+            .then(csvData => {
+                const tableBody = document.querySelector('#dataTable tbody');
+                tableBody.innerHTML = '';
+
+                // Split CSV data into rows
+                const rows = csvData.trim().split('\n');
+
+                // Process each row
+                rows.forEach(row => {
+                    // Split row into cells
+                    const cells = row.split(',');
+
+                    // Create a new table row
+                    const newRow = document.createElement('tr');
+
+                    // Add cells to the row
+                    cells.forEach(cell => {
+                        const newCell = document.createElement('td');
+                        newCell.textContent = cell.trim(); // Trim whitespace
+                        newRow.appendChild(newCell);
+                    });
+
+                    // Add the row to the table
+                    tableBody.appendChild(newRow);
+                });
+            })
+            .catch(error => console.error('Error fetching CSV data:', error));
+    }
+
+    // Call the function to display initial CSV data
+    displayCSVData('static/js/kon1.csv');
+
+    // Add event listener to form submission
+    document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    const symbol = document.getElementById('symbol').value; // Get symbol value from input
+
+    // Get CSRF token from cookies
+    const csrftoken = getCookie('csrftoken');
+
+    // Use Fetch API to submit the form data asynchronously
+    fetch('http://127.0.0.1:8000/tab', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrftoken // Include CSRF token in headers
+        },
+        body: 'symbol=' + encodeURIComponent(symbol)
+    })
+    .then(response => {
+        if (response.ok) {
+            // If form submission is successful, update CSV file path and display data
+            displayCSVData('static/js/kon1.csv');
+        } else {
+            console.error('Form submission failed:', response.statusText);
+        }
+    })
+    .catch(error => console.error('Error submitting form:', error));
+});
+
+// Function to get CSRF token from cookies
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Check if cookie name matches the CSRF token cookie name
+            if (cookie.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+    // Function to download raw CSV data
+    function downloadRawCSV() {
+        // Path to your CSV file
+        var csvFilePath = 'static/js/kon.csv';
+
+        // Trigger download
+        window.location.href = csvFilePath;
+    }
+
+    // Add event listener to download button
+    document.getElementById('downloadButton').addEventListener('click', downloadRawCSV);
+</script>
+
+</body>
+</html>

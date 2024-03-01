@@ -1,0 +1,2 @@
+[2024-02-18 19:23:08,071] 241 django.request - WARNING -Not Found: /favicon.ico
+[2024-02-18 19:23:10,454] 241 django.request - WARNING -Not Found: /updatedb

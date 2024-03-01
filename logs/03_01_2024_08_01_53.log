@@ -1,0 +1,2 @@
+[2024-03-01 08:02:08,656] 230 django.request - WARNING -Not Found: /favicon.ico
+[2024-03-01 08:04:36,032] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

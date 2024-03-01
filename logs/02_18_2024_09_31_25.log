@@ -1,0 +1,2 @@
+[2024-02-18 09:31:39,530] 230 django.security.csrf - WARNING -Forbidden (CSRF token missing or incorrect.): /train/
+[2024-02-18 09:34:30,516] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\settings.py changed, reloading.

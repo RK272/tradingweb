@@ -1,0 +1,7 @@
+[2024-03-01 16:11:03,803] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:11:11,732] 103 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-03-01 16:11:11,734] 230 django.request - WARNING -Method Not Allowed: /authentication/logout
+[2024-03-01 16:11:18,653] 103 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-03-01 16:11:18,654] 230 django.request - WARNING -Method Not Allowed: /authentication/logout
+[2024-03-01 16:11:25,094] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:11:43,763] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py changed, reloading.

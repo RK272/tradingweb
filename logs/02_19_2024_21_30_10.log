@@ -1,0 +1,2 @@
+[2024-02-19 21:30:11,084] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 21:30:21,960] 241 django.request - WARNING -Not Found: /myproject/expensewebsite/static/js/t.csv

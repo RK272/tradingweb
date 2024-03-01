@@ -1,0 +1,3 @@
+[2024-02-26 21:05:26,849] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 21:06:10,216] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 21:07:49,306] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py changed, reloading.

@@ -1,0 +1,24 @@
+[2024-02-19 06:30:57,882] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 06:31:34,115] 241 django.request - ERROR -Internal Server Error: /registration
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 137, in registration
+    myuser=User.objects.create_user(username,email,password)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+[2024-02-19 06:34:34,823] 241 django.request - ERROR -Internal Server Error: /registration
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 135, in registration
+    return render(request, 'trade/registration.html', {'error': 'Username already exists'})
+NameError: name 'HttpResponse' is not defined
+[2024-02-19 19:08:04,328] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

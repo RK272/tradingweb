@@ -1,0 +1,25 @@
+[2024-02-26 07:19:08,714] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 07:19:51,436] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 472, in tab
+    df1.to_csv('static/js/kon1.csv')
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\generic.py", line 3720, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\formats\format.py", line 1189, in to_csv
+    csv_formatter.save()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\formats\csvs.py", line 241, in save
+    with get_handle(
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\common.py", line 734, in get_handle
+    check_parent_directory(str(handle))
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\common.py", line 597, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'static\js'
+[2024-02-26 07:24:11,204] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

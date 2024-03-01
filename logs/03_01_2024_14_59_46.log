@@ -1,0 +1,2 @@
+[2024-03-01 15:38:49,284] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 15:52:48,973] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\authentication\urls.py changed, reloading.

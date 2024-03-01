@@ -1,0 +1,50 @@
+[2024-02-26 20:18:52,612] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 20:19:21,567] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 20:19:26,345] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:27,055] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:27,504] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:27,856] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:28,202] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:28,545] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:28,904] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:29,224] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:29,624] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:29,961] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:30,200] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:30,825] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:31,191] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:31,623] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:34,009] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:34,025] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:36,869] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:38,031] 241 django.request - WARNING -Conflict: /authentication/validate-email
+[2024-02-26 20:19:43,073] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:48,691] 241 django.request - WARNING -Conflict: /authentication/validate-email
+[2024-02-26 20:19:49,864] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:49,910] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 20:19:52,050] 241 django.request - WARNING -Conflict: /authentication/validate-email
+[2024-02-26 20:20:02,865] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 89, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials r23-20020a17090a941700b0029942a73eaesm4524039pjo.9 - gsmtp')

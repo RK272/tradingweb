@@ -1,0 +1,17 @@
+[2024-02-19 19:14:13,693] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 19:14:29,580] 241 django.request - ERROR -Internal Server Error: /cad
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 465, in candlestick_chart_view
+    return render(request, 'cad.html', context)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: cad.html
+[2024-02-19 19:15:40,392] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

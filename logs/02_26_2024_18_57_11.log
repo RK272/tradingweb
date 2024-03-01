@@ -1,0 +1,71 @@
+[2024-02-26 18:57:11,574] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 18:57:19,857] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 18:58:05,866] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 18:58:11,100] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:11,661] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:12,144] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:12,540] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:12,908] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:13,317] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:13,676] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:14,044] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:14,484] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:14,867] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:15,180] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:16,419] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:17,892] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:18,292] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:21,388] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:21,459] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:25,259] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:25,781] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:26,052] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:27,540] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:28,045] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:28,308] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:28,925] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:29,604] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:30,078] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:30,380] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:30,668] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:30,964] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:31,429] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:31,685] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:32,029] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:32,321] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:33,006] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:33,396] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:33,732] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:35,196] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:35,229] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:38,179] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 18:58:43,179] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 88, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11003] getaddrinfo failed
+[2024-02-26 19:01:43,082] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\settings.py changed, reloading.

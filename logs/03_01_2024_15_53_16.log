@@ -1,0 +1,5 @@
+[2024-03-01 16:00:10,740] 103 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-03-01 16:00:10,743] 230 django.request - WARNING -Method Not Allowed: /authentication/logout
+[2024-03-01 16:08:31,114] 103 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-03-01 16:08:31,119] 230 django.request - WARNING -Method Not Allowed: /authentication/logout
+[2024-03-01 16:10:51,445] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py changed, reloading.

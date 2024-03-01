@@ -1,0 +1,16 @@
+[2024-02-25 19:40:22,741] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 19:41:07,235] 241 django.request - WARNING -Not Found: /data_from_mongodb.csv
+[2024-02-25 19:41:47,766] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 479, in tab
+    writer.writerow(document)
+  File "C:\Users\DELL\Anaconda3\lib\csv.py", line 154, in writerow
+    return self.writer.writerow(self._dict_to_list(rowdict))
+  File "C:\Users\DELL\Anaconda3\lib\csv.py", line 149, in _dict_to_list
+    raise ValueError("dict contains fields not in fieldnames: "
+ValueError: dict contains fields not in fieldnames: ''
+[2024-02-25 19:43:59,126] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

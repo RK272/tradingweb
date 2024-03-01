@@ -1,0 +1,17 @@
+columns:
+  -datetime: datetime
+  -open: float
+  -high: float
+  -low: float
+  -close: float
+
+numerical_columns:
+  - open
+  - high
+  - low
+  - close
+
+drop_columns:
+  - datetime
+  - low
+  - high

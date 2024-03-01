@@ -1,0 +1,4 @@
+[2024-02-19 05:19:51,700] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 05:20:11,010] 241 django.request - WARNING -Not Found: /favicon.ico
+[2024-02-19 05:20:18,557] 241 django.request - WARNING -Not Found: /admin/
+[2024-02-19 05:21:54,373] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\urls.py changed, reloading.

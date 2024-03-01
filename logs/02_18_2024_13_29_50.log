@@ -1,0 +1,47 @@
+[2024-02-18 13:29:51,563] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 13:30:27,886] 38 root - INFO -starting data ingestion
+[2024-02-18 13:30:28,167] 241 django.request - ERROR -Internal Server Error: /prediction
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 10, in read_yaml_file
+    with open(file_path,"rb") as yaml_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\schema.yaml'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_ingestion.py", line 20, in __init__
+    self._schema_config=read_yaml_file(SCHEMA_FILE_PATH)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 13, in read_yaml_file
+    raise SensorException(e,sys) from e
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [10] error message [[Errno 2] No such file or directory: 'config\\schema.yaml']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 39, in start_data_ingestion
+    data_ingestion=DataIngestion(data_ingestion_config=self.data_ingestion_config)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_ingestion.py", line 24, in __init__
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_ingestion.py] line number [20] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [10] error message [[Errno 2] No such file or directory: 'config\\schema.yaml']]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 121, in run_pipeline
+    data_ingestion_artifact:DataIngestionArtifact=self.start_data_ingestion()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 44, in start_data_ingestion
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [39] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_ingestion.py] line number [20] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [10] error message [[Errno 2] No such file or directory: 'config\\schema.yaml']]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 39, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [121] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [39] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_ingestion.py] line number [20] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [10] error message [[Errno 2] No such file or directory: 'config\\schema.yaml']]]]

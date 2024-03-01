@@ -1,0 +1,8 @@
+[2024-02-18 16:45:47,087] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 16:45:57,841] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:46:43,588] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:46:45,835] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:46:47,292] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:46:47,821] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:46:48,058] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:49:58,135] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\urls.py changed, reloading.

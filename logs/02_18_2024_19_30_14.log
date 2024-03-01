@@ -1,0 +1,4 @@
+[2024-02-18 19:38:25,422] 241 django.request - WARNING -Not Found: /prediction/training
+[2024-02-18 19:38:36,764] 241 django.request - WARNING -Not Found: /prediction/prediction
+[2024-02-18 19:38:40,513] 241 django.request - WARNING -Not Found: /prediction/prediction
+[2024-02-18 19:50:10,772] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

@@ -1,0 +1,1086 @@
+[2024-02-18 15:40:49,543] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 15:41:15,979] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 120, in run_pipeline
+    a.fyersinitiation(self.symbol)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\fyers.py", line 208, in fyersinitiation
+    collection = DB[symbol]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 208, in __init__
+    raise InvalidName("collection names cannot be empty")
+pymongo.errors.InvalidName: collection names cannot be empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [120] error message [collection names cannot be empty]
+[2024-02-18 15:41:22,438] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:22,546] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:22,546] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:22,548] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:22,591] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:22,592] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:22,693] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:22,693] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:22,693] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:22,693] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:24,362] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:24,365] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:24,366] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:24,371] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:24,399] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:24,560] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:24,572] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:24,573] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:24,585] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:24,585] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:24,792] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:25,561] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:25,664] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:25,665] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:25,665] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:25,709] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:25,710] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:25,802] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:25,803] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:25,803] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:25,803] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:27,641] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:27,645] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:27,645] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:27,650] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:27,682] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:27,896] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:27,909] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:27,910] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:27,923] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:27,923] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:28,154] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251085\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:32,821] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:32,920] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:32,921] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:32,921] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:32,963] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:32,964] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:33,063] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:33,063] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:33,063] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:33,064] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:34,721] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:34,724] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:34,724] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:34,726] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:34,753] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:34,900] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:34,911] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:34,911] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:34,922] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:34,923] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:35,140] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251088\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:37,098] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:37,195] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:37,196] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:37,197] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:37,241] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:37,243] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:37,339] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:37,339] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:37,339] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:37,340] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:39,049] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:39,051] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:39,051] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:39,054] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:39,086] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:39,238] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:39,250] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:39,250] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:39,261] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:39,262] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:39,487] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251095\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:41,431] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:41,538] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:41,538] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:41,539] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:41,584] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:41,585] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:41,677] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:41,678] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:41,678] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:41,678] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:43,004] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:43,328] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:43,345] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:43,350] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:43,508] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:43,509] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:43,572] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:43,589] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:43,590] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:43,593] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:43,628] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:43,800] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:43,800] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:43,801] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:43,801] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:43,946] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:44,106] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:44,109] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:44,111] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:44,550] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:44,550] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:44,679] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:44,817] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:44,817] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:45,317] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:45,318] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:45,475] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:45,480] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:45,480] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:45,481] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:46,903] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251099\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:46,951] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:47,079] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:47,079] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:47,207] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:47,330] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:48,457] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,472] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,472] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,488] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,488] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:48,493] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,497] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,498] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,501] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,555] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:48,850] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,891] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,891] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:48,959] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:48,984] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:49,040] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:49,002] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py", line 40, in initiate_model_evaluation
+    df = pd.read_csv(valid_train_file_path)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 1753, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 79, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 554, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 82, in start_model_evaluation
+    model_eval_artifact = model_eval.initiate_model_evaluation()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py", line 117, in initiate_model_evaluation
+    raise SensorException(e, sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [40] error message [No columns to parse from file]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 126, in run_pipeline
+    model_eval_artifact = self.start_model_evaluation(data_validation_artifact, model_trainer_artifact,data_transformation_artifact)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 85, in start_model_evaluation
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [82] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [40] error message [No columns to parse from file]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [126] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [82] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [40] error message [No columns to parse from file]]]
+[2024-02-18 15:41:49,216] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:49,217] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:49,219] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:49,298] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:49,299] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:49,335] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251107\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:49,427] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:49,428] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:49,428] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:49,428] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:51,147] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:51,149] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:51,150] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:51,152] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:51,179] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:51,321] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:51,333] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:51,333] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:51,343] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:51,344] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:51,574] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251109\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:54,035] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:54,134] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:54,135] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:54,135] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:54,185] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:54,186] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:54,282] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:54,283] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:54,283] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:54,283] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:55,931] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:55,933] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:55,934] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:55,936] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:55,977] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:56,158] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:56,169] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:56,169] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:56,180] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:56,181] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:56,397] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251112\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:41:56,600] 38 root - INFO -starting data ingestion
+[2024-02-18 15:41:56,695] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:41:56,696] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:41:56,696] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:41:56,740] 52 root - INFO -exported train and test file path
+[2024-02-18 15:41:56,741] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:41:56,831] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:41:56,832] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:41:56,832] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:41:56,832] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:41:58,566] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:58,569] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:58,569] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:58,571] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:58,598] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:41:58,748] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:58,758] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:58,759] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:41:58,769] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:41:58,769] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:41:59,001] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251116\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:03,935] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:04,037] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:04,037] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:04,038] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:04,083] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:04,084] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:04,185] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:04,185] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:04,185] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:04,185] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:05,121] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:05,842] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:05,858] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:05,860] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:06,075] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:06,087] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:06,312] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:06,313] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:06,313] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:06,313] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:06,319] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:06,323] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:06,324] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:06,326] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:06,363] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:06,882] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:07,486] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:07,487] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:07,532] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:07,739] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:07,762] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:07,763] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:07,763] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:07,764] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:07,793] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:07,794] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:08,212] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:08,228] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:08,244] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:08,260] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:08,868] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:08,875] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:08,876] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:08,887] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:08,931] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251119\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:08,933] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:10,358] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:10,592] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:10,593] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:10,657] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:10,657] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:10,877] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:10,906] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:10,907] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:10,936] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:10,979] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:11,037] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251129\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:11,189] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:11,200] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:11,201] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:11,214] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:11,214] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:11,427] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251131\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:23,930] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:24,044] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:24,044] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:24,045] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:24,090] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:24,090] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:24,188] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:24,188] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:24,188] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:24,189] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:25,979] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:25,982] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:25,982] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:25,984] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:26,014] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:26,318] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:26,330] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:26,350] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:26,350] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:26,363] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:26,363] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:26,470] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:26,472] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:26,494] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:26,588] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:26,589] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:26,632] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251131\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:26,725] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:26,725] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:26,725] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:26,725] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:28,325] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:28,328] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:28,328] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:28,330] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:28,358] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:28,496] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:28,507] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:28,508] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:28,518] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:28,519] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:28,753] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251147\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:39,397] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:39,498] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:39,499] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:39,499] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:39,543] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:39,544] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:39,640] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:39,640] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:39,640] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:39,640] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:42,302] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:42,306] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:42,307] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:42,310] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:42,355] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:42,523] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:42,535] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:42,535] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:42,549] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:42,550] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:42,801] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251149\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:45,970] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:46,067] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:46,068] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:46,068] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:46,113] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:46,113] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:46,208] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:46,208] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:46,209] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:46,209] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:47,797] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:47,801] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:47,801] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:47,803] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:47,831] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:47,979] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:47,991] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:47,991] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:48,002] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:48,003] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:48,235] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251163\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:49,259] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:49,355] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:49,355] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:49,356] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:49,404] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:49,405] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:49,498] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:49,498] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:49,499] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:49,499] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:51,155] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:51,159] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:51,160] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:51,163] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:51,191] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:51,336] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:51,347] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:51,347] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:51,358] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:51,359] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:42:51,579] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251168\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:42:55,803] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:55,907] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:55,907] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:55,908] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:55,953] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:55,953] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:56,058] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:56,058] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:56,059] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:56,059] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:57,022] 38 root - INFO -starting data ingestion
+[2024-02-18 15:42:57,657] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:42:57,657] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:42:57,674] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:42:57,863] 52 root - INFO -exported train and test file path
+[2024-02-18 15:42:57,864] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:42:57,902] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:57,904] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:57,905] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:57,907] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:57,937] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:42:58,044] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:42:58,044] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:42:58,044] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:42:58,045] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:42:58,207] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:58,238] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:58,253] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:42:58,537] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:42:58,553] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:00,326] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251172\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:00,335] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:00,343] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:00,344] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:00,348] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:00,407] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:00,549] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:00,560] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:00,561] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:00,572] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:00,573] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:00,798] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251180\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:01,155] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:01,251] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:01,252] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:01,252] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:01,300] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:01,300] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:01,416] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:01,416] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:01,416] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:01,416] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:03,207] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:03,209] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:03,209] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:03,211] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:03,239] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:03,433] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:03,447] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:03,448] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:03,460] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:03,460] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:03,682] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251181\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:04,139] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:04,249] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:04,249] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:04,251] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:04,307] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:04,307] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:04,435] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:04,435] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:04,435] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:04,435] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:06,160] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:06,169] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:06,173] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:06,173] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:06,178] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:06,248] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:06,336] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:06,337] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:06,341] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:06,394] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:06,425] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:06,425] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:06,570] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:06,571] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:06,571] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:06,573] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:06,585] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:06,587] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:06,590] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:06,690] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:06,691] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:06,693] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:06,719] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:06,721] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:06,740] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:06,741] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:06,842] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:06,843] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:06,844] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:06,846] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:08,453] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251184\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:09,756] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:09,992] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:09,993] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,137] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,279] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:10,511] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,515] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,516] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,522] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,556] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:10,582] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,593] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,594] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,607] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,609] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:10,829] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,843] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,843] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:10,859] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:10,859] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:10,893] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251189\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:11,152] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251189\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:16,303] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:16,399] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:16,399] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:16,399] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:16,441] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:16,441] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:16,537] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:16,538] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:16,538] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:16,538] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:17,665] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:18,178] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:18,188] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:18,190] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:18,421] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:18,422] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:18,535] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:18,548] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:18,550] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:18,560] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:18,561] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:18,663] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:18,668] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:18,668] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:18,669] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:18,669] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:18,710] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:18,710] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:18,714] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:18,803] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:18,819] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:18,982] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:18,982] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:18,984] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:18,985] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:19,334] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:19,604] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:19,620] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:19,858] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:19,889] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:22,029] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:22,044] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251191\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:22,047] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:22,048] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:22,055] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:22,123] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:23,783] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:23,819] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:23,820] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:23,833] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:23,834] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:23,834] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:23,838] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:23,839] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:23,847] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:23,895] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:24,218] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251202\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:24,280] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:24,296] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:24,296] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:24,313] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:24,314] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:24,554] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251204\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:25,002] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:25,099] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:25,099] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:25,100] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:25,145] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:25,145] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:25,240] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:25,240] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:25,241] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:25,241] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:26,367] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:26,876] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:26,888] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:26,957] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:27,116] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:27,138] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:27,163] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:27,179] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:27,182] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:27,183] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:27,185] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:27,250] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:27,306] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:27,306] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:27,307] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:27,308] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:27,320] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:27,321] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:27,322] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:27,407] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:27,407] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:27,590] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:27,590] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:27,593] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:27,594] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:27,788] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:28,074] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:28,074] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:28,296] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:28,329] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:30,503] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251205\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:31,188] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,192] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,193] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,197] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,261] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:31,419] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,422] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,422] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,426] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,463] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:31,547] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,561] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,562] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,588] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,589] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:31,659] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,675] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,676] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:31,692] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:31,692] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:32,166] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251211\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:32,147] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 62, in load_object
+    return dill.load(file_obj)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\dill\_dill.py", line 272, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\dill\_dill.py", line 419, in load
+    obj = StockUnpickler.load(self)
+EOFError: Ran out of input
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py", line 80, in initiate_model_evaluation
+    train_model = load_object(file_path=train_model_file_path)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 64, in load_object
+    raise SensorException(e, sys) from e
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [62] error message [Ran out of input]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 82, in start_model_evaluation
+    model_eval_artifact = model_eval.initiate_model_evaluation()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py", line 117, in initiate_model_evaluation
+    raise SensorException(e, sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [80] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [62] error message [Ran out of input]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 126, in run_pipeline
+    model_eval_artifact = self.start_model_evaluation(data_validation_artifact, model_trainer_artifact,data_transformation_artifact)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 85, in start_model_evaluation
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [82] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [80] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [62] error message [Ran out of input]]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 44, in prediction
+    progress = train_pipeline.run_pipeline(progress_callback=update_progress)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [126] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [82] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_evaluation.py] line number [80] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [62] error message [Ran out of input]]]]
+[2024-02-18 15:43:36,418] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:36,522] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:36,523] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:36,523] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:36,571] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:36,571] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:36,680] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:36,681] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:36,681] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:36,681] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:37,876] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:38,010] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:38,280] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:38,312] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:38,328] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:38,629] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:38,644] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:38,676] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:38,766] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:38,769] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:38,863] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:38,863] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:39,052] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:39,067] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:39,068] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:39,068] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:39,069] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:39,078] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:39,080] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:39,117] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:39,121] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:39,128] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:39,130] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:39,130] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:39,173] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:40,982] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:41,012] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:41,013] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:41,110] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:41,110] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:42,753] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:42,764] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:42,765] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:42,778] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:42,979] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:43,008] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:43,022] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:43,023] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:43,039] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251212\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:43,050] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:43,113] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:43,432] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 34, in load_numpy_array_data
+    return np.load(file_obj)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\numpy\lib\npyio.py", line 438, in load
+    raise ValueError("Cannot load file containing pickled data "
+ValueError: Cannot load file containing pickled data when allow_pickle=False
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py", line 41, in initiate_model_trainer
+    train_arr = load_numpy_array_data(train_file_path)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py", line 36, in load_numpy_array_data
+    raise SensorException(e, sys) from e
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [34] error message [Cannot load file containing pickled data when allow_pickle=False]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 71, in start_model_trainer
+    model_trainer_artifact = model_trainer.initiate_model_trainer()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py", line 98, in initiate_model_trainer
+    raise SensorException(e, sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [41] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [34] error message [Cannot load file containing pickled data when allow_pickle=False]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 125, in run_pipeline
+    model_trainer_artifact = self.start_model_trainer(data_transformation_artifact)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 74, in start_model_trainer
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [71] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [41] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [34] error message [Cannot load file containing pickled data when allow_pickle=False]]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 44, in prediction
+    progress = train_pipeline.run_pipeline(progress_callback=update_progress)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [125] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [71] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [41] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\utils\main_utils.py] line number [34] error message [Cannot load file containing pickled data when allow_pickle=False]]]]
+[2024-02-18 15:43:43,509] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:43,521] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:43,521] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:43,532] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:43,532] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:43,759] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251223\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:47,185] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:47,331] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:47,332] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:47,337] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:47,374] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:47,401] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:47,401] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:47,494] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:47,495] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:47,495] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:47,495] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:47,515] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:47,516] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:47,517] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:47,600] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:47,606] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:47,962] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:47,975] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:47,991] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:48,007] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:50,011] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:50,277] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:50,350] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:50,357] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:50,403] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:50,406] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:50,410] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:50,416] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:50,449] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:50,532] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:50,533] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:51,246] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:51,263] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:51,263] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:51,278] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:51,673] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:51,684] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:51,690] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:51,691] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:51,694] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:51,695] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:51,705] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:51,716] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:51,717] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:51,753] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:52,913] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:53,148] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:53,163] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:53,387] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:53,401] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:53,659] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251224\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:54,025] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:54,032] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:54,032] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:54,038] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:54,085] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:43:54,121] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251224\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:54,299] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:54,316] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:54,317] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:54,332] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:54,333] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:43:54,595] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251234\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:43:57,401] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:57,508] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:57,508] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:57,509] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:57,557] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:57,557] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:57,654] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:57,655] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:57,655] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:57,655] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:58,719] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:58,741] 38 root - INFO -starting data ingestion
+[2024-02-18 15:43:59,171] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:59,172] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:59,172] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:43:59,187] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:43:59,203] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:59,221] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:43:59,529] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:59,530] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:59,544] 52 root - INFO -exported train and test file path
+[2024-02-18 15:43:59,545] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:43:59,847] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:59,850] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:59,850] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:59,850] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:59,850] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:59,851] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:59,851] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:43:59,886] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:43:59,887] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:43:59,889] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:43:59,890] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:43:59,891] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:43:59,996] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:44:01,245] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:01,653] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:01,659] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:01,701] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:01,703] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:44:03,602] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251235\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:44:03,605] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,611] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,612] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,616] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,651] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,655] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,656] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,657] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:44:03,661] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,714] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:44:03,898] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,913] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,914] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,931] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,933] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,933] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:44:03,945] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,945] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:03,957] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:03,958] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:44:04,387] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251244\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:44:04,387] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251244\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:44:09,633] 38 root - INFO -starting data ingestion
+[2024-02-18 15:44:09,634] 38 root - INFO -starting data ingestion
+[2024-02-18 15:44:09,739] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:44:09,787] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:44:09,797] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:44:09,798] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:44:09,818] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:44:09,820] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:44:09,937] 38 root - INFO -starting data ingestion
+[2024-02-18 15:44:09,937] 52 root - INFO -exported train and test file path
+[2024-02-18 15:44:09,938] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:44:09,947] 52 root - INFO -exported train and test file path
+[2024-02-18 15:44:09,948] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:44:10,137] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:44:10,138] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:44:10,138] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:44:10,138] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:44:10,139] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:44:10,140] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:44:10,140] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:44:10,141] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:44:10,141] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:44:10,142] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:44:10,143] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:44:10,207] 52 root - INFO -exported train and test file path
+[2024-02-18 15:44:10,208] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:44:10,339] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:44:10,340] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:44:10,341] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:44:10,342] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_40_48\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_40_48\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:44:11,576] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_transformation.py", line 114, in initiate_data_transformation
+    train_df=pd.read_csv(self.data_validation_artifact.valid_train_file_path)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py", line 1753, in _make_engine
+    return mapping[engine](f, **self.options)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 79, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 554, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 62, in start_data_transformation
+    data_transformation_artifact =  data_transformation.initiate_data_transformation()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_transformation.py", line 219, in initiate_data_transformation
+    raise SensorException(e, sys) from e
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_transformation.py] line number [114] error message [No columns to parse from file]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 123, in run_pipeline
+    data_transformation_artifact = self.start_data_transformation(
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 65, in start_data_transformation
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [62] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_transformation.py] line number [114] error message [No columns to parse from file]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [123] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [62] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_transformation.py] line number [114] error message [No columns to parse from file]]]
+[2024-02-18 15:44:13,922] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:13,955] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:13,964] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:13,971] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,069] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:44:14,168] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,172] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,172] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,176] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,215] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_40_48\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:44:14,324] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,349] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,350] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,370] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,370] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:44:14,436] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,451] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,451] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:44:14,464] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:44:14,464] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:44:14,813] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251244\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:44:14,824] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708251244\\model.pkl', trained_model_path='artifact\\02_18_2024_15_40_48\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))

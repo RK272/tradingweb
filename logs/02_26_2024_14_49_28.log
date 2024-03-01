@@ -1,0 +1,57 @@
+[2024-02-26 14:49:29,436] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 14:49:41,235] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:51:37,019] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:51:38,608] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:51:57,257] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:51:57,581] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:51:58,038] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:51:58,318] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:51:58,870] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:00,062] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:01,118] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:02,774] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:03,173] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:03,629] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:05,669] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:06,722] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:07,077] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:08,375] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:08,399] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:12,460] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:52:41,983] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 88, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11003] getaddrinfo failed
+[2024-02-26 15:11:59,570] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 15:12:16,339] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 15:12:22,131] 241 django.request - WARNING -Conflict: /authentication/validate-email
+[2024-02-26 15:12:22,403] 241 django.request - WARNING -Conflict: /authentication/validate-email
+[2024-02-26 15:12:47,877] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 15:13:00,934] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 15:13:15,398] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 15:13:20,679] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js

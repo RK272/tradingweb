@@ -1,0 +1,4 @@
+[2024-02-19 06:15:05,076] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 06:15:20,652] 241 django.request - WARNING -Not Found: /registration
+[2024-02-19 06:15:33,866] 241 django.request - WARNING -Not Found: /registration
+[2024-02-19 06:16:11,858] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\urls.py changed, reloading.

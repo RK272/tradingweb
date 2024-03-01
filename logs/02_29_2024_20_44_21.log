@@ -1,0 +1,2 @@
+[2024-02-29 21:02:01,144] 230 django.request - WARNING -Not Found: /myproject/expensewebsite/static/js/torc5.csv
+[2024-02-29 21:03:07,066] 230 django.request - WARNING -Not Found: /expensewebsite/static/js/torc5.csv

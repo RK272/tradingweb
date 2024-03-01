@@ -1,0 +1,359 @@
+[2024-02-18 15:36:56,150] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 15:37:23,624] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 120, in run_pipeline
+    a.fyersinitiation(self.symbol)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\fyers.py", line 208, in fyersinitiation
+    collection = DB[symbol]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 208, in __init__
+    raise InvalidName("collection names cannot be empty")
+pymongo.errors.InvalidName: collection names cannot be empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [120] error message [collection names cannot be empty]
+[2024-02-18 15:37:31,168] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:31,275] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:31,275] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:31,277] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:31,321] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:31,321] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:31,432] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:31,433] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:31,433] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:31,433] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:33,031] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:33,034] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:33,035] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:33,037] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:33,068] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:33,226] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:33,239] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:33,239] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:33,252] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:33,252] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:33,284] 75 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=None, best_model_path=None, trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556), best_model_metric_artifact=None)
+[2024-02-18 15:37:35,341] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:35,443] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:35,443] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:35,444] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:35,487] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:35,488] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:35,589] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:35,590] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:35,590] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:35,590] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:37,252] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:37,254] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:37,254] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:37,257] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:37,285] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:37,429] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:37,440] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:37,440] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:37,451] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:37,451] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:37,666] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:37,900] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:37:40,775] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:40,874] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:40,874] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:40,875] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:40,916] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:40,916] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:41,010] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:41,011] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:41,011] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:41,011] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:42,592] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:42,594] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:42,594] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:42,596] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:42,626] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:42,766] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:42,777] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:42,778] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:42,788] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:42,788] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:42,990] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:43,226] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:37:44,010] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:44,108] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:44,109] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:44,109] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:44,153] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:44,153] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:44,263] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:44,263] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:44,264] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:44,264] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:45,876] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:45,879] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:45,879] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:45,881] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:45,910] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:46,050] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:46,061] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:46,061] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:46,071] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:46,072] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:46,269] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:46,500] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:37:48,764] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:48,865] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:48,866] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:48,867] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:48,924] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:48,925] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:49,025] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:49,026] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:49,026] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:49,026] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:50,721] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:50,814] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:50,817] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:50,817] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:50,820] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:50,850] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:50,869] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:50,869] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:50,870] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:50,940] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:50,941] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:51,073] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:51,074] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:51,075] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:51,075] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:51,121] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:51,136] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:51,137] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:51,152] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:51,152] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:52,397] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:53,070] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:53,051] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 44, in prediction
+    progress = train_pipeline.run_pipeline(progress_callback=update_progress)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:37:53,077] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:53,078] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:53,099] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:53,179] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:53,354] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:53,367] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:53,368] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:53,416] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:53,417] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:53,663] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:53,872] 38 root - INFO -starting data ingestion
+[2024-02-18 15:37:53,996] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:37:54,023] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:37:54,023] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:37:54,024] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:37:54,073] 52 root - INFO -exported train and test file path
+[2024-02-18 15:37:54,074] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:37:54,167] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:37:54,167] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:37:54,167] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:37:54,168] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:37:55,888] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:55,891] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:55,891] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:55,893] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:55,921] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:37:56,061] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:56,072] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:56,073] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:37:56,083] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:37:56,083] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:37:56,303] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:37:56,558] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:38:00,200] 38 root - INFO -starting data ingestion
+[2024-02-18 15:38:00,303] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:38:00,304] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:38:00,304] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:38:00,351] 52 root - INFO -exported train and test file path
+[2024-02-18 15:38:00,352] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:38:00,458] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:38:00,458] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:38:00,459] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:38:00,459] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:38:02,132] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:02,134] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:02,135] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:02,137] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:02,166] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:38:02,307] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:02,317] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:02,318] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:02,328] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:02,329] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:38:02,528] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:38:02,776] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:38:03,135] 38 root - INFO -starting data ingestion
+[2024-02-18 15:38:03,236] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 15:38:03,236] 42 root - INFO -exited split_data as train test split
+[2024-02-18 15:38:03,237] 47 root - INFO -exporting train and test file path
+[2024-02-18 15:38:03,283] 52 root - INFO -exported train and test file path
+[2024-02-18 15:38:03,283] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 15:38:03,377] 28 root - INFO -Required number of columns: 5
+[2024-02-18 15:38:03,377] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 15:38:03,377] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 15:38:03,377] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_15_36_55\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_15_36_55\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 15:38:05,330] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:05,332] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:05,333] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:05,335] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:05,365] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_15_36_55\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 15:38:05,512] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:05,523] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:05,524] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 15:38:05,535] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 15:38:05,535] 95 root - INFO -Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), test_metric_artifact=regressionMetricArtifact(f1_score=0.4761904761904762, precision_score=0.4166666666666667, recall_score=0.5555555555555556))
+[2024-02-18 15:38:05,904] 113 root - INFO -Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=False, improved_accuracy=0.0, best_model_path='saved_models\\1708250853\\model.pkl', trained_model_path='artifact\\02_18_2024_15_36_55\\model_trainer\\trained_model\\model.pkl', train_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511), best_model_metric_artifact=regressionMetricArtifact(f1_score=0.8723404255319148, precision_score=0.9111111111111111, recall_score=0.8367346938775511))
+[2024-02-18 15:38:06,326] 241 django.request - ERROR -Internal Server Error: /prediction/
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 128, in run_pipeline
+    raise Exception("Trained model is not better than the best model")
+Exception: Trained model is not better than the best model
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 43, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [128] error message [Trained model is not better than the best model]
+[2024-02-18 15:40:30,365] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py changed, reloading.

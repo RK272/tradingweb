@@ -1,0 +1,12 @@
+[2024-02-25 05:30:01,889] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 05:30:18,116] 241 django.request - WARNING -Not Found: /js/tab.js
+[2024-02-25 05:30:18,263] 241 django.request - WARNING -Not Found: /collection2
+[2024-02-25 05:30:18,269] 241 django.request - WARNING -Not Found: /collection1
+[2024-02-25 05:31:12,234] 241 django.request - WARNING -Not Found: /tab/collection1
+[2024-02-25 05:34:09,406] 241 django.request - WARNING -Not Found: /js/tab.js
+[2024-02-25 05:34:09,515] 241 django.request - WARNING -Not Found: /collection1
+[2024-02-25 05:34:09,520] 241 django.request - WARNING -Not Found: /collection2
+[2024-02-25 05:34:46,845] 241 django.request - WARNING -Not Found: /js/tab.js
+[2024-02-25 05:34:46,929] 241 django.request - WARNING -Not Found: /collection2
+[2024-02-25 05:34:46,932] 241 django.request - WARNING -Not Found: /collection1
+[2024-02-25 05:36:32,989] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

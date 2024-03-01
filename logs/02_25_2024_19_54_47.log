@@ -1,0 +1,2 @@
+[2024-02-25 19:54:48,285] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 19:55:35,329] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

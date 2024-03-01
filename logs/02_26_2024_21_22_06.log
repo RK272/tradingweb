@@ -1,0 +1,8 @@
+[2024-02-26 21:22:07,010] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 21:22:17,495] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 21:22:20,042] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 21:22:28,941] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 21:22:33,998] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 21:22:34,757] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 21:22:35,413] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 21:23:01,076] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\settings.py changed, reloading.

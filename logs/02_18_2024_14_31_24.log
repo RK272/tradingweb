@@ -1,0 +1,51 @@
+[2024-02-18 14:31:25,606] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 14:32:04,829] 38 root - INFO -starting data ingestion
+[2024-02-18 14:32:04,947] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 14:32:04,947] 42 root - INFO -exited split_data as train test split
+[2024-02-18 14:32:04,949] 47 root - INFO -exporting train and test file path
+[2024-02-18 14:32:04,998] 52 root - INFO -exported train and test file path
+[2024-02-18 14:32:04,998] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_14_31_24\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 14:32:05,074] 28 root - INFO -Required number of columns: 5
+[2024-02-18 14:32:05,074] 29 root - INFO -Data frame has columns: 6
+[2024-02-18 14:32:05,075] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 14:32:05,495] 241 django.request - ERROR -Internal Server Error: /prediction
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py", line 119, in initiate_data_validation
+    raise Exception(error_message)
+Exception: Train dataframe does not contain all columns.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 51, in start_data_validaton
+    data_validation_artifact = data_validation.initiate_data_validation()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py", line 137, in initiate_data_validation
+    raise SensorException(e, sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py] line number [119] error message [Train dataframe does not contain all columns.
+]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 122, in run_pipeline
+    data_validation_artifact = self.start_data_validaton(data_ingestion_artifact=data_ingestion_artifact)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 54, in start_data_validaton
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [51] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py] line number [119] error message [Train dataframe does not contain all columns.
+]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 39, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [122] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [51] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py] line number [119] error message [Train dataframe does not contain all columns.
+]]]
+[2024-02-18 14:34:37,280] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\src\components\data_validation.py changed, reloading.

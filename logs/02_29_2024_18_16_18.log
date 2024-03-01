@@ -1,0 +1,44 @@
+[2024-02-29 18:17:13,492] 230 django.request - ERROR -Internal Server Error: /cad
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 1603, in _ensure_numeric
+    x = float(x)
+ValueError: could not convert string to float: '1095.71096.31096.11097.551096.55'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 1607, in _ensure_numeric
+    x = complex(x)
+ValueError: complex() arg is a malformed string
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 457, in candlestick_chart_view
+    df['ema'] = ta.ema(df['close'], length=period)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas_ta\overlap\ema.py", line 26, in ema
+    sma_nth = close[0:length].mean()
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\generic.py", line 10751, in mean
+    return NDFrame.mean(self, axis, skipna, level, numeric_only, **kwargs)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\generic.py", line 10370, in mean
+    "mean", nanops.nanmean, axis, skipna, level, numeric_only, **kwargs
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\generic.py", line 10355, in _stat_function
+    func, name=name, axis=axis, skipna=skipna, numeric_only=numeric_only
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\series.py", line 4392, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 94, in _f
+    return f(*args, **kwargs)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 156, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 411, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 666, in nanmean
+    the_sum = _ensure_numeric(values.sum(axis, dtype=dtype_sum))
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\nanops.py", line 1610, in _ensure_numeric
+    raise TypeError(f"Could not convert {x} to numeric") from err
+TypeError: Could not convert 1095.71096.31096.11097.551096.55 to numeric
+[2024-02-29 18:20:02,409] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

@@ -1,0 +1,47 @@
+[2024-02-26 19:01:49,814] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 19:02:34,087] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 19:02:48,883] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:49,444] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:49,860] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:50,180] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:50,556] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:50,885] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:51,157] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:51,571] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:51,900] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:52,235] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:52,756] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:53,300] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:53,740] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:54,099] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:54,484] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:02:55,276] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:03:04,689] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:03:04,716] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:03:07,435] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 19:03:19,505] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 88, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 95, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor ls25-20020a056a00741900b006e532495091sm1473779pfb.73 - gsmtp')
+[2024-02-26 19:03:19,859] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js

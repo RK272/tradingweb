@@ -1,0 +1,5 @@
+[2024-02-18 16:15:02,665] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 16:15:14,526] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:15:18,052] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:15:24,764] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:15:58,875] 241 django.request - WARNING -Not Found: /prediction/

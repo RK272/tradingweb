@@ -1,0 +1,50 @@
+[2024-02-25 18:57:41,768] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 18:58:16,295] 241 django.request - ERROR -Internal Server Error: /training
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 120, in run_pipeline
+    a.fyersinitiation(self.symbol)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\fyers.py", line 208, in fyersinitiation
+    collection = DB[symbol]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 205, in __init__
+    raise TypeError("name must be an instance of str")
+TypeError: name must be an instance of str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 152, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [120] error message [name must be an instance of str]
+[2024-02-25 18:59:20,504] 241 django.request - ERROR -Internal Server Error: /training
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 120, in run_pipeline
+    a.fyersinitiation(self.symbol)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\fyers.py", line 208, in fyersinitiation
+    collection = DB[symbol]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 205, in __init__
+    raise TypeError("name must be an instance of str")
+TypeError: name must be an instance of str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 152, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [120] error message [name must be an instance of str]
+[2024-02-25 19:03:07,022] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\urls.py changed, reloading.

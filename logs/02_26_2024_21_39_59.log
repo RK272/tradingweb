@@ -1,0 +1,5 @@
+[2024-02-26 21:39:59,914] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 21:44:43,997] 146 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-02-26 21:44:44,001] 241 django.request - WARNING -Method Not Allowed: /authentication/logout
+[2024-02-26 21:46:08,651] 146 django.request - WARNING -Method Not Allowed (GET): /authentication/logout
+[2024-02-26 21:46:08,652] 241 django.request - WARNING -Method Not Allowed: /authentication/logout

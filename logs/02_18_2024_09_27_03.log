@@ -1,0 +1,12 @@
+[2024-02-18 09:27:27,644] 230 django.request - ERROR -Internal Server Error: /train
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\utils\deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\middleware\common.py", line 95, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/train/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2024-02-18 09:31:22,268] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\settings.py changed, reloading.

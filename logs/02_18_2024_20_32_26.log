@@ -1,0 +1,3 @@
+[2024-02-18 20:32:26,653] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 20:32:40,317] 241 django.request - WARNING -Not Found: /training
+[2024-02-18 20:34:00,295] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\urls.py changed, reloading.

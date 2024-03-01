@@ -1,0 +1,35 @@
+[2024-03-01 16:34:47,808] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:34:52,395] 230 django.request - WARNING -Not Found: /registration
+[2024-03-01 16:37:07,284] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:37:09,225] 230 django.request - WARNING -Not Found: /registration
+[2024-03-01 16:37:11,720] 230 django.request - WARNING -Not Found: /registration
+[2024-03-01 16:37:17,946] 230 django.request - WARNING -Not Found: /registration
+[2024-03-01 16:38:30,782] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:38:32,231] 230 django.request - WARNING -Not Found: /authentication/authentication/register.html
+[2024-03-01 16:38:36,475] 230 django.request - WARNING -Not Found: /authentication/authentication/register.html
+[2024-03-01 16:39:02,489] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:39:03,922] 230 django.request - WARNING -Not Found: /authentication/authentication/register
+[2024-03-01 16:40:35,920] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:40:39,196] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:40:40,959] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:40:56,360] 230 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-03-01 16:40:57,803] 230 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-03-01 16:41:04,473] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:04,684] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:05,205] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:05,702] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:06,037] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:06,462] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:06,838] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:07,213] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:07,629] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:07,950] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:08,509] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:10,230] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:11,734] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:12,053] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:12,950] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:12,996] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:16,420] 230 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-03-01 16:41:37,531] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-03-01 16:43:07,335] 230 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js

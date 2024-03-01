@@ -1,0 +1,16 @@
+[2024-02-29 23:37:32,606] 230 django.request - ERROR -Internal Server Error: /cad
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 452, in candlestick_chart_view
+    df = df[['timestamp', 'open', 'high', 'low', 'close']].copy()
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\frame.py", line 3464, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\indexing.py", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\indexing.py", line 1377, in _validate_read_indexer
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['timestamp'] not in index"
+[2024-02-29 23:39:07,383] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

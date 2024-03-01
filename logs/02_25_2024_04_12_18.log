@@ -1,0 +1,2 @@
+[2024-02-25 04:12:19,122] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 04:12:38,240] 241 django.request - WARNING -Not Found: /favicon.ico

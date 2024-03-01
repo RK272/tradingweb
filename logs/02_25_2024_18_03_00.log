@@ -1,0 +1,2 @@
+[2024-02-25 18:03:01,439] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 18:04:18,707] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\settings.py changed, reloading.

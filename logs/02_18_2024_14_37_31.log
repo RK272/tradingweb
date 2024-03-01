@@ -1,0 +1,53 @@
+[2024-02-18 14:37:32,023] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 14:38:09,455] 38 root - INFO -starting data ingestion
+[2024-02-18 14:38:09,698] 41 root - INFO -performed train test split on dataframe
+[2024-02-18 14:38:09,699] 42 root - INFO -exited split_data as train test split
+[2024-02-18 14:38:09,702] 47 root - INFO -exporting train and test file path
+[2024-02-18 14:38:09,748] 52 root - INFO -exported train and test file path
+[2024-02-18 14:38:09,749] 41 root - INFO -Data ingestion completed and artifact: DataIngestionArtifact(trained_file_path='artifact\\02_18_2024_14_37_31\\data_ingestion\\ingested\\train.csv')
+[2024-02-18 14:38:09,917] 28 root - INFO -Required number of columns: 5
+[2024-02-18 14:38:09,918] 29 root - INFO -Data frame has columns: 5
+[2024-02-18 14:38:09,918] 48 root - INFO -Missing numerical columns: [[]]
+[2024-02-18 14:38:09,918] 136 root - INFO -Data validation artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact\\02_18_2024_14_37_31\\data_ingestion\\ingested\\train.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='artifact\\02_18_2024_14_37_31\\data_validation\\drift_report\\report.yaml')
+[2024-02-18 14:38:11,817] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 14:38:11,874] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 14:38:11,875] 48 root - INFO -Entered the save_object method of MainUtils class
+[2024-02-18 14:38:11,881] 52 root - INFO -Exited the save_object method of MainUtils class
+[2024-02-18 14:38:11,910] 216 root - INFO -Data transformation artifact: DataTransformationArtifact(transformed_object_file_path='artifact\\02_18_2024_14_37_31\\data_transformation\\transformed_object\\preprocessing.pkl', transformed_object2_file_path='artifact\\02_18_2024_14_37_31\\data_transformation\\transformed_object\\preprocessing1.pkl', transformed_train_file_path='artifact\\02_18_2024_14_37_31\\data_transformation\\transformed\\train.npy', transformed_test_file_path='artifact\\02_18_2024_14_37_31\\data_transformation\\transformed\\test.npy', transformed_train_file_path1='artifact\\02_18_2024_14_37_31\\data_transformation\\transformed_object\\train.csv')
+[2024-02-18 14:38:12,683] 241 django.request - ERROR -Internal Server Error: /prediction
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py", line 76, in initiate_model_trainer
+    raise Exception("Model is not good try to do more experimentation.")
+Exception: Model is not good try to do more experimentation.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 71, in start_model_trainer
+    model_trainer_artifact = model_trainer.initiate_model_trainer()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py", line 98, in initiate_model_trainer
+    raise SensorException(e, sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [76] error message [Model is not good try to do more experimentation.]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 125, in run_pipeline
+    model_trainer_artifact = self.start_model_trainer(data_transformation_artifact)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 74, in start_model_trainer
+    raise  SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [71] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [76] error message [Model is not good try to do more experimentation.]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 39, in prediction
+    train_pipeline.run_pipeline()
+  File "C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py", line 136, in run_pipeline
+    raise SensorException(e,sys)
+src.exception.SensorException: Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [125] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py] line number [71] error message [Error occurred python script name [C:\Users\DELL\PycharmProjects\django\myproject\src\components\model_trainer.py] line number [76] error message [Model is not good try to do more experimentation.]]]
+[2024-02-18 14:42:13,627] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\src\constant\training_pipeline\__init__.py changed, reloading.

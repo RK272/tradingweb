@@ -1,0 +1,9 @@
+[2024-02-25 17:23:48,745] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 17:24:06,452] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: tab() missing 1 required positional argument: 'collection_name'
+[2024-02-25 17:25:35,226] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

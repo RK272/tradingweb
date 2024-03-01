@@ -1,0 +1,7 @@
+[2024-02-21 21:45:26,049] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-21 21:53:10,898] 241 django.request - WARNING -Not Found: /index2.js
+[2024-02-21 21:53:15,332] 241 django.request - WARNING -Not Found: /index2.js
+[2024-02-21 21:53:24,774] 241 django.request - WARNING -Not Found: /index2.js
+[2024-02-21 21:54:43,357] 241 django.request - WARNING -Not Found: /index2.js
+[2024-02-21 21:55:36,635] 241 django.request - WARNING -Not Found: /index2.js
+[2024-02-21 21:56:15,209] 241 django.request - WARNING -Not Found: /index2.js

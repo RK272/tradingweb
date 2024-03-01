@@ -1,0 +1,2 @@
+[2024-03-01 17:08:10,624] 230 django.request - WARNING -Not Found: /
+[2024-03-01 17:12:48,242] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\expensewebsite\urls.py changed, reloading.

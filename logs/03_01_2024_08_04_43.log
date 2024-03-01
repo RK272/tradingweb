@@ -1,0 +1,18 @@
+[2024-03-01 08:05:17,066] 230 django.request - ERROR -Internal Server Error: /cad
+Traceback (most recent call last):
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 451, in candlestick_chart_view
+    df['timestamp'] = (df['datetime'] - pd.Timestamp("1970-01-01")) // pd.Timedelta('1s')
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\ops\common.py", line 69, in new_method
+    return method(self, other)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\arraylike.py", line 100, in __sub__
+    return self._arith_method(other, operator.sub)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\series.py", line 5526, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+  File "C:\Users\DELL\anaconda3\envs\dai5\lib\site-packages\pandas\core\ops\array_ops.py", line 218, in arithmetic_op
+    res_values = op(left, right)
+TypeError: unsupported operand type(s) for -: 'numpy.ndarray' and 'Timestamp'
+[2024-03-01 08:07:48,367] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

@@ -1,0 +1,7 @@
+[2024-02-26 07:24:16,999] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 07:24:31,386] 241 django.request - WARNING -Not Found: /kon1.csv
+[2024-02-26 07:24:48,532] 241 django.request - WARNING -Not Found: /kon1.csv
+[2024-02-26 07:25:56,352] 241 django.request - WARNING -Not Found: /myproject/kon1.csv
+[2024-02-26 07:26:01,394] 241 django.request - WARNING -Not Found: /myproject/kon1.csv
+[2024-02-26 07:26:18,674] 241 django.request - WARNING -Not Found: /myproject/kon1.csv
+[2024-02-26 07:32:35,435] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

@@ -1,0 +1,2 @@
+[2024-02-18 09:35:22,757] 230 django.request - WARNING -Not Found: /train
+[2024-02-18 10:12:54,187] 251 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

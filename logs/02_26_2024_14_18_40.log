@@ -1,0 +1,115 @@
+[2024-02-26 14:18:40,979] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 14:18:56,552] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:19:34,273] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:19:36,238] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:19:49,652] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:19:51,021] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:20:10,961] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 88, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11003] getaddrinfo failed
+[2024-02-26 14:20:20,374] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:20:27,993] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:20:34,771] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:20:40,411] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:20:43,022] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:20:48,904] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:22:36,515] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:22:40,697] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:22:41,852] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:22:52,545] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:53,026] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:53,582] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:54,026] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:54,570] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:56,331] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:56,682] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:57,629] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:22:59,363] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:00,170] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:01,356] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:01,866] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:03,687] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:04,459] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:05,787] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:05,833] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:10,145] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:23:16,672] 241 django.request - ERROR -Internal Server Error: /authentication/register
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\authentication\views.py", line 88, in post
+    email.send(fail_silently=False)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\Users\DELL\Anaconda3\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\DELL\Anaconda3\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11003] getaddrinfo failed
+[2024-02-26 14:24:11,132] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:11,473] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:12,065] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:12,498] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:13,193] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:14,421] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:14,762] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:15,242] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:15,521] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:16,074] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:16,594] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:17,202] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:17,666] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:18,004] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:18,481] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:19,706] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:19,734] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:23,763] 241 django.request - WARNING -Bad Request: /authentication/validate-email
+[2024-02-26 14:24:29,167] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:24:32,515] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:24:34,899] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:24:36,101] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:24:41,207] 241 django.request - WARNING -Conflict: /authentication/validate-username
+[2024-02-26 14:24:45,593] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 14:24:54,831] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js

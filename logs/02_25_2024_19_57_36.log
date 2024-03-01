@@ -1,0 +1,12 @@
+[2024-02-25 19:57:37,339] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 19:57:51,122] 241 django.request - WARNING -Not Found: /data_from_mongodb.csv
+[2024-02-25 19:58:05,988] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 473, in tab
+    writer = csv.DictWriter(csvfile, fields=fieldnames)
+TypeError: DictWriter.__init__() missing 1 required positional argument: 'fieldnames'
+[2024-02-25 19:59:26,659] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

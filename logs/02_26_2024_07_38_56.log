@@ -1,0 +1,28 @@
+[2024-02-26 07:38:57,235] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 07:39:12,777] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 466, in tab
+    collection = client[DATABASE_NAME][collection_name]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 205, in __init__
+    raise TypeError("name must be an instance of str")
+TypeError: name must be an instance of str
+[2024-02-26 07:40:09,604] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 466, in tab
+    collection = client[DATABASE_NAME][collection_name]
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\database.py", line 237, in __getitem__
+    return Collection(self, name)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pymongo\collection.py", line 205, in __init__
+    raise TypeError("name must be an instance of str")
+TypeError: name must be an instance of str
+[2024-02-26 07:44:28,136] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

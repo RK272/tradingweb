@@ -1,0 +1,4 @@
+[2024-02-26 12:56:43,577] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-26 12:57:16,584] 241 django.request - WARNING -Not Found: /docs/5.3/assets/js/color-modes.js
+[2024-02-26 12:57:16,590] 241 django.request - WARNING -Not Found: /docs/5.3/dist/js/bootstrap.bundle.min.js
+[2024-02-26 12:58:29,995] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

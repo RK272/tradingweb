@@ -1,0 +1,7 @@
+[2024-02-25 06:27:55,361] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 06:29:36,999] 241 django.request - WARNING -Not Found: /tab/NSE:ITC-EQ
+[2024-02-25 06:30:14,984] 241 django.request - WARNING -Not Found: /tab/BANKNIFTY
+[2024-02-25 06:30:36,270] 241 django.request - WARNING -Not Found: /tab/TRADERZSPOT
+[2024-02-25 06:31:06,187] 241 django.request - WARNING -Not Found: /tab/TRADERZSPOT
+[2024-02-25 06:31:34,418] 241 django.request - WARNING -Not Found: /tab/"NSE:ITC-EQ"
+[2024-02-25 17:02:29,264] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

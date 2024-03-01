@@ -1,0 +1,30 @@
+[2024-02-19 06:16:16,590] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-19 06:16:56,070] 241 django.request - WARNING -Not Found: /registration/
+[2024-02-19 06:18:10,050] 241 django.request - WARNING -Not Found: /registration/
+[2024-02-19 06:18:34,333] 241 django.request - ERROR -Internal Server Error: /registration
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 127, in registration
+    myuser=User.objects.create_user(user,email,password)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+[2024-02-19 06:21:51,913] 241 django.request - ERROR -Internal Server Error: /registration
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 127, in registration
+    myuser=User.objects.create_user(user,email,password)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\contrib\auth\models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+[2024-02-19 06:27:42,864] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

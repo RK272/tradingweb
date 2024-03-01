@@ -1,0 +1,42 @@
+[2024-02-25 20:16:23,564] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-25 20:16:36,915] 241 django.request - WARNING -Not Found: /data_from_mongodb1.csv
+[2024-02-25 20:16:52,656] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 482, in tab
+    df = pd.DataFrame.from_dict(document)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\frame.py", line 1764, in from_dict
+    return cls(data, index=index, columns=columns, dtype=dtype)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\frame.py", line 664, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 493, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 118, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 656, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[2024-02-25 20:26:29,708] 241 django.request - WARNING -Not Found: /data_from_mongodb1.csv
+[2024-02-25 20:27:31,116] 241 django.request - ERROR -Internal Server Error: /tab
+Traceback (most recent call last):
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py", line 482, in tab
+    df = pd.DataFrame.from_dict(document)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\frame.py", line 1764, in from_dict
+    return cls(data, index=index, columns=columns, dtype=dtype)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\frame.py", line 664, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 493, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 118, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "C:\Users\DELL\Anaconda3\lib\site-packages\pandas\core\internals\construction.py", line 656, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[2024-02-25 20:33:18,279] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\trade\views.py changed, reloading.

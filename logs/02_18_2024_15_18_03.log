@@ -1,0 +1,2 @@
+[2024-02-18 15:18:04,710] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 15:21:11,858] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py changed, reloading.

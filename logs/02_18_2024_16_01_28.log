@@ -1,0 +1,4 @@
+[2024-02-18 16:01:29,513] 160 numexpr.utils - INFO -NumExpr defaulting to 4 threads.
+[2024-02-18 16:01:35,596] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:01:45,906] 241 django.request - WARNING -Not Found: /prediction/
+[2024-02-18 16:04:58,809] 266 django.utils.autoreload - INFO -C:\Users\DELL\PycharmProjects\django\myproject\src\pipeline\training_pipeline.py changed, reloading.
